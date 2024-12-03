@@ -2,7 +2,7 @@
 ## [[Paper](https://arxiv.org/pdf/2410.10034)] [[Website (TBD)]()] [[Checkpoints (TBD)]()]
 
 ## Overview 🌟  
-**TULIP** (Token-length Upgraded CLIP) is a method to upgrade the caption length of CLIP-like models to perform long caption understanding. This repository contains the code and experiments associated with the paper:  
+**TULIP** (Token-length Upgraded CLIP) is a method to upgrade the caption length of CLIP-like models to perform long caption understanding. This repository contains the code associated with the paper:  
 > *"TULIP: Token-length Upgraded CLIP"*  
 > *[Ivona Najdenkoska](https://ivonajdenkoska.github.io/)٭, [Mohammad M. Derakshani](https://mmderakhshani.github.io/)٭, [Yuki M. Asano](https://yukimasano.github.io/), [Nanne van Noord](https://nanne.github.io/), [Marcel Worring](https://staff.fnwi.uva.nl/m.worring/), [Cees Snoek](https://www.ceessnoek.info/)*
  
@@ -35,7 +35,7 @@ make install training
 
 ## Data 🗂️
 
-We use [ShareGPT4V](https://sharegpt4v.github.io/) dataset for TULIP's training. You can download the data annotations from [here](https://huggingface.co/datasets/Lin-Chen/ShareGPT4V/tree/main) (use share-captioner_coco_lcs_sam_1246k_1107.json), and the images from the following links:
+We use [ShareGPT4V](https://sharegpt4v.github.io/) dataset for TULIP's training. You can download the data annotations from [here](https://huggingface.co/datasets/Lin-Chen/ShareGPT4V/tree/main) (use share-captioner_coco_lcs_sam_1246k_1107.json), and the images from the links below. For more information on how to organize the folders, check [here](https://github.com/beichenzbc/Long-CLIP/blob/main/train/train.md#2-prepare-sharegpt4v-dataset).
 - LAION-CC-SBU-558K: [images.zip](https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain/blob/main/images.zip)
 - COCO: [train2017](http://images.cocodataset.org/zips/train2017.zip)
 - WebData: [images](https://drive.google.com/drive/folders/1tCUQ-sq6vdshZVkF0ZeF3K4eztkXJgax?usp=sharing) (academic usage)
