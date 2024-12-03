@@ -1,3 +1,11 @@
+# Folders
+wandb/
+open_clip/wandb
+open_clip/wandb/latest-run
+open_clip/logs
+open_clip/__pycache__/
+eval/__pycache__/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
