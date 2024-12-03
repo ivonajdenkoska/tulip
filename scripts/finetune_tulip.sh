@@ -1,8 +1,8 @@
 TORCH_CUDNN_V8_API_ENABLED=1 torchrun --nproc_per_node 8 -m training.main_context_finetune_rope \
     --dataset-type "csv" \
     --batch-size 4 \
-    --train-data "/ShareGPT4V/share-captioner_coco_lcs_sam_1246k_1107.csv" \
-    --val-data "/ShareGPT4V/share-captioner_coco_lcs_sam_1246k_1107.csv" \
+    --train-data "/ShareGPT4V/data/share-captioner_coco_lcs_sam_1246k_1107_train.csv" \
+    --val-data "/ShareGPT4V/data/share-captioner_coco_lcs_sam_1246k_1107_val.csv" \
     --logs "/logs/sharegpt4v/" \
     --warmup 1000 \
     --lr 1e-5 \

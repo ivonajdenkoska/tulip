@@ -45,12 +45,13 @@ We use [ShareGPT4V](https://sharegpt4v.github.io/) dataset for TULIP's training.
 - TextVQA: [trainvalimages](https://dl.fbaipublicfiles.com/textvqa/images/train_val_images.zip)
 - VisualGenome: [part1](https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip), [part2](https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip)
 
+To further prepare the dataset for the training stage, please convert the json into a csv file, by running ```get_csv(args)``` in ```open_clip.data_prep.sharegpt_preprocessing.py```. Afterwards, create two separate csv files: *_train.csv and *_val.csv. For the validation split use the first 1k instances of ```share-captioner_coco_lcs_sam_1246k_1107```, and use the remaining for training.
 
 ## Training 🏋️‍♂️
 ![TULIP_framework](images/framework.png)
 
 The training process of TULIP consists of two stages: **relative position distillation** and **relative position expansion**. 
-The first stage consists of distilling the knowledge of an exisitng CLIP model with fixed positional encodings, into a student model with relative positional encodings (i.e. RoPE, CoPE, etc.). To perfom this, you can use the following bash script to run the training on a single GPU:
+The first stage consists of distilling the knowledge of an exisitng CLIP model with fixed positional encodings, into a student model with relative positional encodings (i.e. RoPE, CoPE, etc.). To perfom this, you can use the following bash script to run the training on a single GPU. Additionally make sure to set the correct paths to the dataset location ```--train-data``` and ```--val-data``` and logs ```--logs```.
 
 ```bash
 python -m training.main_distill_rope \
@@ -79,13 +80,13 @@ python -m training.main_distill_rope \
 
 For training on multiple GPUs (e.g launhing the job on a node of 8 GPUs), you can use ```torchrun``` and ```--nproc_per_node``` flag. So simply replace the first line with the follwing: ```TORCH_CUDNN_V8_API_ENABLED=1 torchrun --nproc_per_node 8 -m training.main_distill_rope \ ```.
 
-For the second stage of the training, we perfrom fine-tuning of the student model by optimizing the CLIP loss with the new positional encodings for a single epoch. 
+For the second stage of the training, we perfrom fine-tuning of the student model by optimizing the CLIP loss with the new positional encodings for a single epoch. Please make sure to set the correct path for the distilled model as ```--student-model```.
 ```bash
 python -m training.main_context_finetune_rope \
     --dataset-type "csv" \
     --batch-size 4 \
-    --train-data "/ShareGPT4V/share-captioner_coco_lcs_sam_1246k_1107.csv" \
-    --val-data "/ShareGPT4V/share-captioner_coco_lcs_sam_1246k_1107.csv" \
+    --train-data "/ShareGPT4V/data/share-captioner_coco_lcs_sam_1246k_1107_train.csv" \
+    --val-data "/ShareGPT4V/data/share-captioner_coco_lcs_sam_1246k_1107_val.csv" \
     --logs "/logs/sharegpt4v/" \
     --warmup 1000 \
     --lr 1e-5 \
