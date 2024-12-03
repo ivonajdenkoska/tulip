@@ -4,7 +4,7 @@
 ## Overview 🌟  
 **TULIP** (Token-length Upgraded CLIP) is a method to upgrade the caption length of CLIP-like models to perform long caption understanding. This repository contains the code associated with the paper:  
 > *"TULIP: Token-length Upgraded CLIP"*  
-> *[Ivona Najdenkoska](https://ivonajdenkoska.github.io/)٭, [Mohammad M. Derakshani](https://mmderakhshani.github.io/)٭, [Yuki M. Asano](https://yukimasano.github.io/), [Nanne van Noord](https://nanne.github.io/), [Marcel Worring](https://staff.fnwi.uva.nl/m.worring/), [Cees Snoek](https://www.ceessnoek.info/)*
+> *[Ivona Najdenkoska](https://ivonajdenkoska.github.io/)٭, [Mohammad M. Derakshani](https://mmderakhshani.github.io/)٭, [Yuki M. Asano](https://yukimasano.github.io/), [Nanne van Noord](https://nanne.github.io/), [Marcel Worring](https://staff.fnwi.uva.nl/m.worring/), [Cees G. M. Snoek](https://www.ceessnoek.info/)*
  
 
 ## Highlights 🚀  
