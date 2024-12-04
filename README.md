@@ -1,5 +1,5 @@
 # 🌷 TULIP: Token-length Upgraded CLIP 
-## [[Paper](https://arxiv.org/pdf/2410.10034)] [[Website (TBD)]()] [[Checkpoints (TBD)]()]
+## [[Paper](https://arxiv.org/pdf/2410.10034)] [[Long-DCI benchmark](https://huggingface.co/datasets/mderakhshani/Long-DCI)] [[Website (TBD)]()] [[Checkpoints (TBD)]()]
 
 ## Overview 🌟  
 **TULIP** (Token-length Upgraded CLIP) is a method to upgrade the caption length of CLIP-like models to perform long caption understanding. This repository contains the code associated with the paper:  
