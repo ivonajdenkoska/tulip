@@ -1,5 +1,5 @@
 # 🌷 TULIP: Token-length Upgraded CLIP 
-## [[Paper](https://arxiv.org/pdf/2410.10034)] [[Long-DCI benchmark](https://huggingface.co/datasets/mderakhshani/Long-DCI)] [[Website (TBD)]()] [[Checkpoints (TBD)]()]
+## [[Paper](https://arxiv.org/pdf/2410.10034)] [[Long-DCI benchmark](https://huggingface.co/datasets/mderakhshani/Long-DCI)] [[Checkpoint](https://huggingface.co/mderakhshani/TULIP/tree/main)]  [[Website (TBD)]()]
 
 
 
@@ -144,13 +144,14 @@ We compare our TULIP-based model to several image generation baselines using Sta
 ## Citation 📜
 If you find the TULIP paper and code useful for your research and applications, please cite using this BibTeX:
 ```
-@article{najdenkoska2024tulip,
-  title={TULIP: Token-length Upgraded CLIP},
-  author={Najdenkoska, Ivona and Derakhshani, Mohammad Mahdi and 
+@inproceedings{
+ najdenkoska2024tulip,
+ title={{TULIP}: Token-length Upgraded {CLIP}},
+ author={Najdenkoska, Ivona and Derakhshani, Mohammad Mahdi and 
   Asano, Yuki M and van Noord, Nanne and Worring, Marcel and Snoek, 
   Cees GM},
-  journal={arXiv preprint arXiv:2410.10034},
-  year={2024}
+ booktitle={The Thirteenth International Conference on Learning Representations (ICLR)},
+ year={2025},
 }
 ```
 
