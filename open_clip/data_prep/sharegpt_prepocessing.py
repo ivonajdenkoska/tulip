@@ -39,13 +39,6 @@ def get_csv(args):
                     
                 # Write the row to the CSV file
                 csv_writer.writerow([image_name, caption])
-            # Write each item from the JSON data
-            for item in tqdm(data, desc='Writing data to CSV'):
-                image_name = f"{images_path}{item['image']}" 
-                caption = item['conversations'][1]['value'].strip().replace('\n', ' ')
-                    
-                # Write the row to the CSV file
-                csv_writer.writerow([image_name, caption])
 
                 short_caption = f"{caption.split('.')[0]}." 
                 csv_writer.writerow([image_name, short_caption])

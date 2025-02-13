@@ -47,8 +47,8 @@ def get_parser():
         default="mscoco_finetuned_laion2b_s13b_b90k",
     )
     parser.add_argument("--distilled_model_path", type=str, default=None)
-    parser.add_argument("--pos_encodings", type=str, choices=['cope', 'rope', 'learnable'], default="cope")
-    parser.add_argument("--context_length", type=int, default=200)
+    parser.add_argument("--pos_encodings", type=str, choices=['cope', 'rope', 'learnable'], default="rope")
+    parser.add_argument("--context_length", type=int, default=248)
 
     parser.add_argument("--run_urban1k", action="store_true")
     parser.add_argument("--run_coco", action="store_true")
@@ -86,8 +86,6 @@ def run_eval_clip(args):
         )
         tokenizer = get_tokenizer(args.model_name, context_length=args.context_length)  
         teacher_cfg = get_model_config(args.model_name)
-
-
 
         if args.distilled_model_path is None:            
             distilled_model = base_clip_model.cuda() 
@@ -203,7 +201,6 @@ def run_eval_clip(args):
     for task, results in accumulative_results.items():
         final_results[task] = {}
         for seed, result in results.items():
-            # 0: {'text_score': 0.2825, 'image_score': 0.115, 'group_score': 0.0825}
             for metric, value in result.items():
                 if metric not in final_results[task]:
                     final_results[task][metric] = []
